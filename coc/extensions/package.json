@@ -1,0 +1,12 @@
+{
+  "dependencies": {
+    "coc-pyright": ">=1.1.305",
+    "coc-json": ">=1.8.0",
+    "coc-clangd": ">=0.28.0",
+    "coc-snippets": ">=3.1.6",
+    "coc-vimtex": ">=1.1.5",
+    "coc-sh": ">=1.1.1",
+    "coc-sumneko-lua": ">=0.0.39",
+    "coc-texlab": ">=3.2.1"
+  }
+}

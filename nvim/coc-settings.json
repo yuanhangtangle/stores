@@ -1,0 +1,9 @@
+{
+	"coc.preferences.formatOnSave": true,
+	"coc.preferences.formatOnSaveTimeout": 800,
+	"python.pythonPath": "/Users/yuanhang/opt/anaconda3/bin/python3",
+	"python.analysis.autoImportCompletions": true,
+	"python.analysis.autoSearchPaths": true,
+	"python.analysis.useLibraryCodeForTypes": true,
+	"semanticTokens.enable": true,
+}

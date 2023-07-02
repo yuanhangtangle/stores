@@ -1,0 +1,3 @@
+13:16:14 INF [API] listening addr=127.0.0.1:62752
+13:16:14 INF [Inbound] Mixed(http+socks) listening addr=127.0.0.1:7890
+13:16:20 INF [Inbound] Mixed(http+socks) listening addr=[::]:7890

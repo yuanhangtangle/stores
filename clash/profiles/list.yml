@@ -1,0 +1,96 @@
+files:
+  - url: ""
+    time: 1685942205564.yml
+    name: config.yaml
+    selected: []
+  - time: 1685942213881.yml
+    name: TAG
+    url: https://support.tagsssubscribe.com/api/v1/client/subscribe?token=f417339538922e19550ddbed497fd343
+    selected:
+      - name: GLOBAL
+        now: 🇯🇵 日本 02丨1x JP
+      - name: ♻️ 手动切换
+        now: 🇭🇰 香港 02丨1x HK
+      - name: 🌏 国内流媒体
+        now: DIRECT
+      - name: 🌏 国内网站
+        now: DIRECT
+      - name: 🌏 国外流媒体
+        now: ♻️ 手动切换
+      - name: 🌏 国外网站
+        now: ♻️ 手动切换
+      - name: 🍎 苹果服务
+        now: DIRECT
+      - name: 🎙 Discord
+        now: ♻️ 手动切换
+      - name: 🎬 AppleTV+
+        now: ♻️ 手动切换
+      - name: 🎬 B站东南亚
+        now: ♻️ 手动切换
+      - name: 🎬 B站港澳台
+        now: DIRECT
+      - name: 🎬 Dazn
+        now: ♻️ 手动切换
+      - name: 🎬 DisneyPlus
+        now: ♻️ 手动切换
+      - name: 🎬 EMBY
+        now: ♻️ 手动切换
+      - name: 🎬 HBOGO
+        now: ♻️ 手动切换
+      - name: 🎬 HBOMAX
+        now: ♻️ 手动切换
+      - name: 🎬 KKTV
+        now: ♻️ 手动切换
+      - name: 🎬 Netflix
+        now: ♻️ 手动切换
+      - name: 🎬 PrimeVideo
+        now: ♻️ 手动切换
+      - name: 🎬 YouTube
+        now: ♻️ 手动切换
+      - name: 🎬 viuTV
+        now: ♻️ 手动切换
+      - name: 🎬 巴哈姆特
+        now: ♻️ 手动切换
+      - name: 🎬 日本媒体
+        now: ♻️ 手动切换
+      - name: 🎬 爱奇艺
+        now: DIRECT
+      - name: 🎬 韩国媒体
+        now: ♻️ 手动切换
+      - name: 🎮 游戏下载
+        now: DIRECT
+      - name: 🎮 游戏平台
+        now: DIRECT
+      - name: 🎵 AppleMusic
+        now: ♻️ 手动切换
+      - name: 🎵 Qobuz
+        now: ♻️ 手动切换
+      - name: 🎵 Spotify
+        now: ♻️ 手动切换
+      - name: 🎵 TIDAL
+        now: ♻️ 手动切换
+      - name: 🎶 TikTok
+        now: ♻️ 手动切换
+      - name: 🐟 漏网之鱼
+        now: ♻️ 手动切换
+      - name: 📪 邮件服务
+        now: DIRECT
+      - name: 📲 聊天软件
+        now: ♻️ 手动切换
+      - name: 🔖 OneDrive
+        now: ♻️ 手动切换
+      - name: 🗺 Speedtest
+        now: ♻️ 手动切换
+      - name: 🧩 微软服务
+        now: DIRECT
+      - name: 🧲 OpenAI
+        now: ♻️ 手动切换
+    interval: 24
+    subInfo:
+      upload: 1560870249
+      download: 47026204171
+      total: 268435456000
+      expire: 1693378823
+    homeWeb: ""
+    mode: direct
+index: 1
