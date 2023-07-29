@@ -21,9 +21,9 @@ you need to install a tex compiler that works on your computer
     https://github.com/junegunn/vim-plug
     ```
 
-- coc.nvim language servers: 
+- coc.nvim language servers and coc-snippets: 
     ```shell
-    CocInstall coc-clangd coc-pyright coc-json coc-sumneko-lua
+    CocInstall coc-clangd coc-pyright coc-json coc-sumneko-lua coc-snippets coc-lists coc-pairs
     CocCommand clangd.install
     ```
 

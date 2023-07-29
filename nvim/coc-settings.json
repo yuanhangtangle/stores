@@ -1,9 +1,20 @@
 {
-	"coc.preferences.formatOnSave": true,
+	"coc.preferences.formatOnSave": false,
 	"coc.preferences.formatOnSaveTimeout": 800,
-	"python.pythonPath": "/Users/yuanhang/opt/anaconda3/bin/python3",
+	"coc.preferences.bracketEnterImprove": false,
+	"python.pythonPath": "~/anaconda3/bin/python3",
 	"python.analysis.autoImportCompletions": true,
 	"python.analysis.autoSearchPaths": true,
 	"python.analysis.useLibraryCodeForTypes": true,
 	"semanticTokens.enable": true,
+	"clangd.path": "~/.config/coc/extensions/coc-clangd-data/install/16.0.2/clangd_16.0.2/bin/clangd",
+	"list.source.files.defaultOptions": [
+		"--number-select"
+	],
+	"list.insertMappings": {
+		"<C-d>": "action:drop",
+		"<C-t>": "action:tabe",
+		"<Tab>": "do:next",
+		"<S-Tab>": "do:previous"
+	}
 }
