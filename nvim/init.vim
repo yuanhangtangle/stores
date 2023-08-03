@@ -17,6 +17,7 @@ if os=="linux"
 	set mouse=
 endif
 
+set hidden
 set nocompatible
 set runtimepath^=~/.vim runtimepath+=~/.vim/after
 let &packpath = &runtimepath
@@ -34,6 +35,14 @@ set softtabstop=2
 set shiftwidth=2
 set encoding=utf-8
 
+let mapleader = ' ' "map the leader key to <Space>
+
+" neoclip: use <C-p> to trigger
+nnoremap <C-p> :Telescope neoclip<cr>
+
+" use U (upper) for undo
+nnoremap U <C-r>
+
 " copilot settings
 "imap <silent><script><expr> <C-J> copilot#Accept("")
 "let g:copilot_no_tab_map = 1
@@ -41,15 +50,8 @@ set encoding=utf-8
 "make
 nmap <F3> :w<cr>:!make -nB<cr>
 
-"map the leader key to <Space>
-let mapleader = ' '
-
 " close quick fix
 nmap <bslash>c <esc>:ccl<cr>
-
-" change the working directory to that of the current buffer
-nmap <leader>cd :lcd %:p:h<cr>:pwd<cr>
-"nmap <leader>cd :echo "hello"<CR>
 
 "ChatGPT
 nmap <C-c>h <Esc>:ChatGPT<cr>
@@ -59,14 +61,14 @@ nmap <C-c>h <Esc>:ChatGPT<cr>
 let g:vista_default_executive = 'coc'
 let g:vista_icon_indent = ["╰─▸ ", "├─▸ "]
 let g:vista#renderer#enable_icon = 1
-nmap <leader>v :Vista!!<cr>
+"nmap <leader>v :Vista!!<cr> "used by telescope coc
 
 " continous trab shift in Visual mode
 vmap < <gv
 vmap > >gv
 
 "file saving with ctrl-s
-map <C-s> <esc>:w<cr>
+map <C-s> <esc>:wa<cr>
 
 " file closing with ctrl-q
 map <C-q> <esc>:q<cr>
@@ -74,8 +76,10 @@ map <C-q> <esc>:q<cr>
 " Find files using Telescope command-line sugar.
 nnoremap <leader>f <cmd>Telescope find_files<cr>
 nnoremap <leader>g <cmd>Telescope live_grep<cr>
-nnoremap <leader>h <cmd>Telescope help_tags<cr>
-"nnoremap <leader>p <cmd>Telescope man_pages<cr>
+nnoremap <leader>v <cmd>Telescope coc document_symbols<cr>
+nnoremap <leader>t <cmd>Telescope coc workspace_symbols<cr>
+"nnoremap <leader>h <cmd>Telescope help_tags<cr> "<leader>h --> toggleterm
+"nnoremap <leader>p <cmd>Telescope man_pages<cr> "used by neoclip
 nnoremap , <cmd>Telescope current_buffer_fuzzy_find<cr>
 
 
@@ -141,7 +145,7 @@ nnoremap <bslash>t :vs term://zsh<cr>
 nnoremap <leader>w <C-w><C-w>
 
 " fold
-nnoremap <leader>i zi
+nnoremap <leader>ii zi
 nnoremap <leader>m zM
  
 " beginning or end of sentence
@@ -209,7 +213,7 @@ function! ShowDocumentation()
 	endif
 endfunction
 
-nnoremap <leader>v :CocList outline<cr>
+"nnoremap <leader>v :CocList outline<cr> " this is done by telescope
 nnoremap <leader>b :CocList buffers<cr>
 
 inoremap <silent><expr> <TAB>
@@ -239,10 +243,9 @@ autocmd CursorHold * silent call CocActionAsync('highlight')
 
 " rename
 nmap <leader>rn <Plug>(coc-rename)
-
+nnoremap <leader>ie :CocCommand workspace.inspectEdit<cr>
 " format
-" <leader>f is for telescope search
-map <bslash>f :call CocAction('format')<cr>
+map <C-f> :wa<cr>:call CocAction('format')<cr>
 
 " code actions
 nmap <leader>ac  <Plug>(coc-codeaction-cursor)
@@ -324,12 +327,12 @@ au Filetype c set shiftwidth=2
 
 "插件设置
 call plug#begin('~/.vim/plugged')
+	Plug 'AckslD/nvim-neoclip.lua'
 	Plug 'akinsho/toggleterm.nvim', {'tag' : '*'}
 	"Plug 'matze/vim-tex-fold'
-	Plug 'fannheyward/telescope-coc.nvim'
 	"Plug 'github/copilot.vim'
 	Plug 'glepnir/dashboard-nvim'
-	Plug 'liuchengxu/vista.vim'
+	"Plug 'liuchengxu/vista.vim'
 	Plug 'folke/trouble.nvim'
 	Plug 'folke/todo-comments.nvim'
 	Plug 'stevearc/dressing.nvim'
@@ -339,22 +342,24 @@ call plug#begin('~/.vim/plugged')
 	Plug 'ggandor/flit.nvim'
 	Plug 'nvim-lua/plenary.nvim'
 	Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.1' }
+	Plug 'fannheyward/telescope-coc.nvim'
 	Plug 'natecraddock/telescope-zf-native.nvim'
 	Plug 'lukas-reineke/indent-blankline.nvim'
-	Plug 'glepnir/dashboard-nvim'
 	Plug 'nvim-tree/nvim-tree.lua'
+	"Plug 'p00f/nvim-ts-rainbow'
 	Plug 'nvim-tree/nvim-web-devicons'
 	Plug 'MunifTanjim/nui.nvim'
 	Plug 'nvim-lua/plenary.nvim'
 	Plug 'jackMort/ChatGPT.nvim'
-	Plug 'lervag/vimtex'
+	"Plug 'lervag/vimtex'
 	Plug 'bronson/vim-visual-star-search'
 	Plug 'yuanhang/vim-sftp'
 	Plug 'jpalardy/vim-slime'
 	Plug 'godlygeek/tabular'
-	Plug 'preservim/vim-markdown'
 	Plug 'morhetz/gruvbox'
+	Plug 'folke/tokyonight.nvim'
 	Plug 'neoclide/coc.nvim', {'branch': 'release'}
+	Plug 'nvim-treesitter/nvim-treesitter-textobjects'
 	"Plug 'kien/rainbow_parentheses.vim'
 	Plug 'vim-airline/vim-airline'
 	"Plug 'jiangmiao/auto-pairs'
@@ -367,13 +372,17 @@ call plug#begin('~/.vim/plugged')
 	Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': 'markdown'}
 call plug#end()
 
-set termguicolors
+"set termguicolors
+"colorscheme tokyonight-moon
 colorscheme gruvbox
 
 lua << EOF
+require('neoclip').setup()
+
 require("toggleterm").setup{
- open_mapping = [[<c-\>]],
- direction='float'
+ open_mapping = [[<C-n>]],
+ direction='float',
+ insert_mappings=false
 }
 
 require('todo-comments').setup()
@@ -381,12 +390,17 @@ require('todo-comments').setup()
 require('chatgpt').setup{
 	openai_params = {
 		max_tokens = 600,
-	}
+	}, 
+	chat = {
+		keymaps = {
+			new_session = "<C-c>n"
+		},
+	},
 }
 
 require("nvim-tree").setup()
 
-require'nvim-treesitter.configs'.setup {
+require('nvim-treesitter.configs').setup {
   ensure_installed = { "c", "lua", "vim", "vimdoc" , "markdown", "yaml", "python"},
   -- I prefer 'lervag/vimtex' 
   ignore_install = { "latex" },
@@ -402,7 +416,46 @@ require'nvim-treesitter.configs'.setup {
     disable = {"latex"},
     additional_vim_regex_highlighting = false,
   },
+
+	rainbow = {
+    enable = true,
+    -- disable = { "jsx", "cpp" },
+    extended_mode = true, -- Also highlight non-bracket delimiters like html tags
+  },
+
+	textobjects = {
+		select = {
+      enable = true,
+      -- Automatically jump forward to textobj, similar to targets.vim
+      lookahead = true,
+
+      keymaps = {
+        ["af"] = "@function.outer",
+        ["if"] = "@function.inner",
+        ["ac"] = "@comment.outer",
+      },
+      -- and should return the mode ('v', 'V', or '<c-v>')
+      selection_modes = {
+        ['@parameter.outer'] = 'v', -- charwise
+        ['@function.outer'] = 'V', -- linewise
+        ['@class.outer'] = '<c-v>', -- blockwise
+      },
+    },
+
+		move = {
+      enable = true,
+      set_jumps = true, -- whether to set jumps in the jumplist
+      goto_next_start = {
+        ["]]"] = "@function.outer",
+        -- ["]]"] = { query = "@class.outer", desc = "Next class start" },
+			},
+			goto_previous_start = {
+				["[["] = "@function.outer",
+			},
+		},
+  },
 }
+
 
 vim.opt.list = true
 vim.opt.listchars:append "space:⋅"
@@ -435,6 +488,8 @@ require('telescope').setup{
 }
 
 require('telescope').load_extension("zf-native")
+require('telescope').load_extension('neoclip')
+require('telescope').load_extension('coc')
 
 require('dashboard').setup{
   theme = 'hyper',
