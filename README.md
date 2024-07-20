@@ -29,7 +29,11 @@ you need to install a tex compiler that works on your computer
 
 - Copilot:
     ```shell
-    Copilot auth
+    Copilot authG
     ```
 
-- write something more here
+- write somethindfasd]asdmfnlkad
+'
+
+asdfafa
+sadfamore here
