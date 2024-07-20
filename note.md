@@ -1,3 +1,2 @@
-write something in test, and i add this line in test
-add a line in test
-add a new line
+only one line in test-1
+and another after commit
