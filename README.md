@@ -31,3 +31,5 @@ you need to install a tex compiler that works on your computer
     ```shell
     Copilot auth
     ```
+
+- write something more here
